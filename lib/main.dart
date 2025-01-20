@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       home:  SplashScreen(),
       theme: ThemeData(
-        fontFamily: "Manrope"
+        fontFamily: "Manrope",
+        useMaterial3: false
       ),
     );
   }

@@ -19,13 +19,15 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: whiteColor,
+        elevation: 0,
         title: Image.asset(
           "assets/images/logo.png",
           width: 130,
           height: 40,
         ),
         actions: [
-          HomeUtils.customButton("Login"),
+          Padding(padding: const EdgeInsets.symmetric(vertical: 10,), child: HomeUtils.customButton("Login"),),
           Builder(builder: (context) {
             return IconButton(
               icon: Image.asset(
@@ -40,6 +42,7 @@ class Home extends StatelessWidget {
           }),
         ],
       ),
+      backgroundColor: whiteColor,
       endDrawer: HomeUtils.endDrawer(context),
       body: SingleChildScrollView(
         child: Column(
