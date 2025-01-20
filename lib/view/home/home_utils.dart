@@ -70,6 +70,7 @@ class HomeUtils{
           style: ElevatedButton.styleFrom(
               elevation:0,
               shadowColor: transparent,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
               backgroundColor: homeController?.buttonText.value==buttonName?blueThree:whiteColor),
           child: Text(
             buttonName,
@@ -359,12 +360,11 @@ class HomeUtils{
        ),
      );
      showModalBottomSheet(
-         backgroundColor: Colors.white,
+         backgroundColor: transparent,
          context: context,
          isScrollControlled: true,
          builder: (context) =>
              FractionallySizedBox(
-               heightFactor: 0.38,
                  child: ui
              )
      );

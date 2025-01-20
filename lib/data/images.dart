@@ -7,7 +7,7 @@ final List<String> services = [
   "assets/images/personal_load.png",
   "assets/images/business_loan.png",
   "assets/images/credit_card.png",
-  "assets/images/car.png"
+  "assets/images/business_loan.png",
 ];
 var faqItems = [
   {

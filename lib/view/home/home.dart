@@ -49,6 +49,7 @@ class Home extends StatelessWidget {
           children: [
             title(),
             animatedDynamicContainer(),
+            const SizedBox(height: 13,),
             carousalSlider(context),
             indicator(),
             const SizedBox(
@@ -217,7 +218,7 @@ class Home extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               margin:
-              EdgeInsets.only(left: index == 0 ? 15 : 0, right: 15),
+              EdgeInsets.only(left: index == 0 ? 12 : 0, right: 12),
               child: Image.asset(
                 services[index],
                 width: 90,
