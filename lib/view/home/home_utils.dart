@@ -192,120 +192,171 @@ class HomeUtils{
     );
   }
 
-  static bottom(context){
+  static bottomSheet(context){
      var ui = SingleChildScrollView(
        child: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Title
-              const Text(
-                "Get Personalized Loan Offers",
-                style: weight700size18primary,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 4),
-              // Subtitle
-              const Text(
-                "Tenure upto 6 months",
-                style:weight500size14blueText,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 32),
-              Container(
-                constraints: const BoxConstraints(maxWidth: 450),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(42),
-                  border: Border.all(color: skyBlue),
+         decoration: const BoxDecoration(
+           borderRadius: BorderRadius.only(topLeft: Radius.circular(16),topRight: Radius.circular(16)),
+           gradient: LinearGradient(
+             begin: Alignment.topLeft,
+             end: Alignment.bottomRight,
+             colors: [
+               color1,
+               color2,
+               color3,
+               color4,
+               color5,
+               color6,
+               color7,
+               color8,
+               color9,
+               color10,
+               color11,
+             ],
+           ),
+         ),
+         child: Container(
+           margin: const EdgeInsets.only(top: 4),
+          decoration: const BoxDecoration(
+            color: whiteColor,
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(16),topRight: Radius.circular(16))
+          ),
+          padding: const EdgeInsets.all(16.0),
+
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Title
+                const Text(
+                  "Get Personalized Loan Offers",
+                  style: weight700size18primary,
+                  textAlign: TextAlign.center,
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: TextField(
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Enter Mobile Number Here",
-                      hintStyle: TextStyle(color: Colors.grey),
+                const SizedBox(height: 4),
+                // Subtitle
+                const Text(
+                  "Tenure upto 6 months",
+                  style:weight500size14blueText,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 32),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        color1,
+                        color2,
+                        color3,
+                        color4,
+                        color5,
+                        color6,
+                        color7,
+                        color8,
+                        color9,
+                        color10,
+                        color11,
+                      ],
                     ),
+                    borderRadius: BorderRadius.circular(42)
                   ),
-                ),
-              ),
-              const SizedBox(height: 32),
-              const Text.rich(
-                TextSpan(
-                  text: "By signing up you agree to ",
-                  style: TextStyle(fontSize: 13, color: Color(0xff071C2C), fontWeight: FontWeight.w500),
-                  children: [
-                    TextSpan(
-                      text: "Terms & Conditions",
-                      style: TextStyle(
-                          color: blueThree,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13
+                  child: Container(
+                    margin: const EdgeInsets.all(1),
+                    constraints: const BoxConstraints(maxWidth: 450),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(42),
+                      border: Border.all(color: skyBlue),
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: TextField(
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Enter Mobile Number Here",
+                          hintStyle: TextStyle(color: Colors.grey),
+                        ),
                       ),
                     ),
-                    TextSpan(
-                      text: " and ",
-                      style: TextStyle(fontSize: 13, color: Color(0xff071C2C), fontWeight: FontWeight.w500),
-                    ),
-                    TextSpan(
-                      text: "Privacy Policy",
-                      style: TextStyle(
-                          color: blueThree,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13
-                      ),
-                    ),
-                    TextSpan(
-                      text: " of WeCredit.",
-                      style: TextStyle(fontSize: 13, color: Color(0xff071C2C), fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
-              ),
-              Container(
-                height: 40,
-                constraints: const BoxConstraints(maxWidth: 450),
-                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(36)),
-                  gradient: LinearGradient(
-                    colors: [lightBlue, blueOne, blueTwo, blueThree], // Gradient colors
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
                   ),
                 ),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.transparent,
-                    textStyle: weight600size16white,
-                    shadowColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(36),
-                    ),
-                  ),
-                  onPressed: (){},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                const SizedBox(height: 32),
+                const Text.rich(
+                  TextSpan(
+                    text: "By signing up you agree to ",
+                    style: TextStyle(fontSize: 13, color: Color(0xff071C2C), fontWeight: FontWeight.w500),
                     children: [
-                      const Flexible(child: Text( "Apply Now", style: weight600size16white,maxLines: 1,)),
-                      const SizedBox(width: 10,),
-                      Image.asset("assets/images/arrow.png", height: 16, width: 16,)
+                      TextSpan(
+                        text: "Terms & Conditions",
+                        style: TextStyle(
+                            color: blueThree,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13
+                        ),
+                      ),
+                      TextSpan(
+                        text: " and ",
+                        style: TextStyle(fontSize: 13, color: Color(0xff071C2C), fontWeight: FontWeight.w500),
+                      ),
+                      TextSpan(
+                        text: "Privacy Policy",
+                        style: TextStyle(
+                            color: blueThree,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13
+                        ),
+                      ),
+                      TextSpan(
+                        text: " of WeCredit.",
+                        style: TextStyle(fontSize: 13, color: Color(0xff071C2C), fontWeight: FontWeight.w500),
+                      ),
                     ],
                   ),
+                  textAlign: TextAlign.center,
                 ),
-              )
-            ],
+                Container(
+                  height: 40,
+                  constraints: const BoxConstraints(maxWidth: 450),
+                  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(36)),
+                    gradient: LinearGradient(
+                      colors: [lightBlue, blueOne, blueTwo, blueThree], // Gradient colors
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      backgroundColor: Colors.transparent,
+                      textStyle: weight600size16white,
+                      shadowColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                    ),
+                    onPressed: (){},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Flexible(child: Text( "Apply Now", style: weight600size16white,maxLines: 1,)),
+                        const SizedBox(width: 10,),
+                        Image.asset("assets/images/arrow.png", height: 16, width: 16,)
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-           ),
+             ),
+       ),
      );
      showModalBottomSheet(
          backgroundColor: Colors.white,

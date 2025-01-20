@@ -109,25 +109,44 @@ class Home extends StatelessWidget {
       ),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: skyBlue, width: 0.9),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            color1,
+            color2,
+            color3,
+            color4,
+            color5,
+            color6,
+            color7,
+            color8,
+            color9,
+            color10,
+            color11,
+          ],
+        ),
         borderRadius: BorderRadius.circular(50),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(50),
-        child: HomeUtils.carouselSlider(
-          images
-              .map(
-                (imagePath) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        margin: const EdgeInsets.all(0.9),
+        decoration: BoxDecoration(
+          color: whiteColor,
+          borderRadius: BorderRadius.circular(50)
+          ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: HomeUtils.carouselSlider(
+            images.map((imagePath) => Padding(padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Image.asset(
                 imagePath,
                 fit: BoxFit.cover,
+                ),
               ),
-            ),
-          )
-              .toList(),
-          scrollDirection: Axis.vertical,
+            )
+                .toList(),
+            scrollDirection: Axis.vertical,
+          ),
         ),
       ),
     );
@@ -164,7 +183,7 @@ class Home extends StatelessWidget {
         ),
         SizedBox(
           width: 80,
-          child: HomeUtils.customButton("Apply", callback: ()=> HomeUtils.bottom(context)),
+          child: HomeUtils.customButton("Apply", callback: ()=> HomeUtils.bottomSheet(context)),
         ),
       ]),
     ],
@@ -201,7 +220,8 @@ class Home extends StatelessWidget {
                 width: 90,
               ),
             );
-          }),
+          },
+          ),
     );
   }
 
